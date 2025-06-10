@@ -13,11 +13,13 @@ import {
 
 export class PersonalBank extends Contract {
   public depositors = BoxMap<Account, uint64>({ keyPrefix: 'depositors' })
+  public github = BoxMap<Account, string>({ keyPrefix: 'kabir-hadiyah' })
 
   /**
    * Deposits funds into the personal bank.
    * The deposit amount is recorded in the sender's BoxMap.
    * If the sender already has a deposit, the amount is added to their existing balance.
+   * @param github - GitHub handle
    * @param payTxn - The payment transaction containing deposit information
    * @returns The total amount deposited by the sender after this transaction
    */
